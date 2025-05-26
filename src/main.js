@@ -1,5 +1,8 @@
 import { images } from "./images";
 const container = document.querySelector(".container");
+const cart = document.querySelector(".cart");
+
+const cartContent = []
 
 const products = [
   { id: 1, name: "Soda Saborizada", description: "Soda", price: `$${19.99}`, img: images[0] },
@@ -14,6 +17,7 @@ products.forEach((product) => {
   const img = document.createElement("img");
   img.src = product.img;
   img.alt = product.name;
+  img.id = product.id;
 
   const title = document.createElement("h2");
   title.textContent = product.name;
