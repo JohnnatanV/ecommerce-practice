@@ -1,6 +1,6 @@
 import { images } from "./images";
 const container = document.querySelector(".container");
-const cart = document.querySelector(".cart");
+const cart = document.querySelector("#cart");
 
 const cartContent = []
 
@@ -13,11 +13,15 @@ const products = [
 products.forEach((product) => {
   const card = document.createElement("div");
   card.classList.add("card");
+  card.setAttribute("data-id", product.id);
 
   const img = document.createElement("img");
   img.src = product.img;
   img.alt = product.name;
   img.id = product.id;
+
+  const cardDesc = document.createElement("div");
+  cardDesc.classList.add("card-desc");
 
   const title = document.createElement("h2");
   title.textContent = product.name;
@@ -33,12 +37,26 @@ products.forEach((product) => {
   button.textContent = "Agregar al carrito";
 
   card.appendChild(img);
-  card.appendChild(title);
-  card.appendChild(desc);
-  card.appendChild(price);
+  card.appendChild(cardDesc);
+  cardDesc.appendChild(title);
+  cardDesc.appendChild(desc);
+  cardDesc.appendChild(price);
   card.appendChild(button);
 
   container.appendChild(card);
 })
 
+const buttons = document.querySelectorAll(".btn");
+console.log(buttons)
 
+buttons.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    console.log(e.target.parentElement.dataset.id);
+  })
+})
+
+console.log(cart)
+
+cart.addEventListener("click", () => {
+
+})
