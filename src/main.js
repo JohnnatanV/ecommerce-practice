@@ -1,6 +1,7 @@
 import { images } from "./images";
 const container = document.querySelector(".container");
 const cart = document.querySelector("#cart");
+const cartContainer = document.querySelector(".cart");
 
 const cartContent = []
 
@@ -39,7 +40,7 @@ products.forEach((product) => {
   card.appendChild(img);
   card.appendChild(cardDesc);
   cardDesc.appendChild(title);
-  cardDesc.appendChild(desc);
+  cardDesc.appendChild(desc)
   cardDesc.appendChild(price);
   card.appendChild(button);
 
@@ -47,16 +48,26 @@ products.forEach((product) => {
 })
 
 const buttons = document.querySelectorAll(".btn");
-console.log(buttons)
 
 buttons.forEach((btn) => {
   btn.addEventListener("click", (e) => {
-    console.log(e.target.parentElement.dataset.id);
+    const elem = parseInt(e.target.parentElement.dataset.id);
+    const cartItem = products.map(item => {
+      if (item.id === elem) {
+        console.log({ ...item })
+        return { ...item }
+      }
+      return null;
+    })
+    console.log(cartItem)
   })
 })
 
-console.log(cart)
 
 cart.addEventListener("click", () => {
+  cartContainer.classList.toggle("hide");
+})
 
+cartContent.forEach((item) => {
+  console.log(item)
 })

@@ -64,6 +64,7 @@ nav {
     top: 4.3rem;
     right: 0.5rem;
     background-color: #444;
+    transition: opacity 0.3s ease-in-out, transform 0.01s ease-in-out;
 
     ul {
       list-style: none;
@@ -75,7 +76,7 @@ nav {
       .cart-item {
         width: 95%;
         padding: 0.5rem;
-        margin: 0.2rem;
+        margin-top: 0.5rem;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -102,9 +103,18 @@ nav {
           color: red;
         }
       }
+
+      li:last-child {
+        margin-bottom: 0.5rem;
+      }
     }
   }
 }
+
+.hide {
+  transform: translateX(110%);
+  opacity: 0;
+  }
 
 .container {
   display: flex;
