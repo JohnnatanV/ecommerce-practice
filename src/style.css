@@ -14,8 +14,8 @@
 }
 
 * {
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -37,7 +37,7 @@ nav {
   }
 
   > ul {
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     list-style: none;
@@ -64,7 +64,9 @@ nav {
     top: 4.3rem;
     right: 0.5rem;
     background-color: #444;
-    transition: opacity 0.3s ease-in-out, transform 0.01s ease-in-out;
+    transition:
+      opacity 0.3s ease-in-out,
+      transform 0.01s ease-in-out;
 
     ul {
       list-style: none;
@@ -97,7 +99,7 @@ nav {
         }
 
         .remove-item {
-          margin: .3rem;
+          margin: 0.3rem;
           font-size: 1.2rem;
           cursor: pointer;
           color: red;
@@ -114,7 +116,7 @@ nav {
 .hide {
   transform: translateX(110%);
   opacity: 0;
-  }
+}
 
 .container {
   display: flex;
@@ -146,7 +148,3 @@ nav {
     cursor: pointer;
   }
 }
-
-
-
-
