@@ -113,6 +113,31 @@ nav {
   }
 }
 
+.tooltip {
+  background-color: #f00;
+  color: #fff;
+  width: 11px;
+  height: 11px;
+  padding: 0.5rem;
+  border-radius: 100%;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    position: relative;
+    text-align: center;
+  }
+}
+
+.hide-tooltip {
+  display: none;
+}
+
 .hide {
   transform: translateX(110%);
   opacity: 0;

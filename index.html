@@ -5,6 +5,13 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/src/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Vite App</title>
   </head>
   <body>
@@ -18,10 +25,16 @@
         <li><a href="#">Products</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
-        <li id="cart"><a href="#">Cart</a></li>
+        <li id="cart">
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </li>
       </ul>
+      <div class="tooltip hide-tooltip" id="tooltip">
+        <span>3</span>
+      </div>
       <div class="cart hide">
         <ul id="cart-box"></ul>
+        <p id="total-price"></p>
       </div>
     </nav>
     <div class="container"></div>
