@@ -30,15 +30,14 @@ const products = [
 ];
 
 const renderCart = () => {
-  const cartBox = document.getElementById("cart-box")
-  cartBox.innerHTML = ""
+  const cartBox = document.getElementById("cart-box");
+  cartBox.innerHTML = "";
 
-  shoppingCart.forEach(item => {
-    const cartItem = document.createElement("li")
-    cartItem.classList = "cart-item"
+  shoppingCart.forEach((item) => {
+    const cartItem = document.createElement("li");
+    cartItem.classList = "cart-item";
 
-    cartItem.innerHTML =
-      `
+    cartItem.innerHTML = `
       <div class="item">
         <h4>${item.product.name}</h4>
         <span>${item.product.price}</span>
@@ -46,35 +45,35 @@ const renderCart = () => {
       </div>
       <img src="${item.product.img}" alt="${item.product.name}" />
       <button class="remove-item>R</button>
-    `
-    cartBox.appendChild(cartItem)
-  })
-}
+    `;
+    cartBox.appendChild(cartItem);
+  });
+};
 
 const addToCart = (itemId) => {
-  const product = products.find(p => p.id === itemId)
-  const itemCart = shoppingCart.find(item => item.product.id === itemId)
+  const product = products.find((p) => p.id === itemId);
+  const itemCart = shoppingCart.find((item) => item.product.id === itemId);
 
   if (itemCart) {
-    itemCart.quantity += 1
+    itemCart.quantity += 1;
   } else {
     shoppingCart.push({
       product,
-      quantity: 1
-    })
+      quantity: 1,
+    });
   }
-  renderCart()
-}
+  renderCart();
+};
 
 products.forEach((product) => {
-  const card = document.createElement("div")
-  card.classList = "card"
-  card.setAttribute("data-id", `${product.id}`)
+  const card = document.createElement("div");
+  card.classList = "card";
+  card.setAttribute("data-id", `${product.id}`);
 
-  const addBtn = document.createElement("button")
-  addBtn.innerText = "Add to Cart"
-  addBtn.classList = "btn"
-  addBtn.addEventListener("click", () => addToCart(product.id))
+  const addBtn = document.createElement("button");
+  addBtn.innerText = "Add to Cart";
+  addBtn.classList = "btn";
+  addBtn.addEventListener("click", () => addToCart(product.id));
 
   card.innerHTML = `
     <img src="${product.img}" alt="${product.name}"
@@ -83,14 +82,11 @@ products.forEach((product) => {
       <p>${product.description}</p>
       <span>${product.price}</span>
     </div>
-  `
-  card.appendChild(addBtn)
-  container.appendChild(card)
+  `;
+  card.appendChild(addBtn);
+  container.appendChild(card);
 });
-
-
 
 cart.addEventListener("click", () => {
   cartContainer.classList.toggle("hide");
 });
-
